@@ -20,4 +20,4 @@ jobs:
 
       - name: Chạy Server + Playit
         run: |
-          ./bedrock_server & ./playit-linux-amd64 || echo "Lỗi khi chạy"
+           ./playit-linux-amd64 || echo "Lỗi khi chạy"
