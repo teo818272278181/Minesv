@@ -20,4 +20,4 @@ jobs:
 
       - name: Chạy Server + Playit
         run: |
-            ./bedrock_server & ./playit-linux-amd64 --stdout
+            ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 10 && lscpu
