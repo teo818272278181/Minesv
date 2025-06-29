@@ -1,21 +1,23 @@
 name: Setup SSHX
 
 on:
-  workflow_dispatch:  # Cho phép bạn chạy action thủ công
+  workflow_dispatch:
 
 jobs:
   run-sshx:
     runs-on: ubuntu-latest
 
     steps:
-  - uses: actions/checkout@v4
-    with:
-      lfs: true
+      - name: Checkout repo with LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
 
-    - name: 1
-      run : |
-        chmod +x bedrock_server && chmod +x playit-linux-amd64
+      - name: Cấp quyền thực thi
+        run: |
+          chmod +x bedrock_server || echo "bedrock_server không tồn tại hoặc chưa tải đúng"
+          chmod +x playit-linux-amd64 || echo "playit-linux-amd64 không tồn tại hoặc chưa tải đúng"
 
-    - name: Cài SSHX
-      run: |
-        ./bedrock_server & ./playit-linux-amd64
+      - name: Chạy Server + Playit
+        run: |
+          ./bedrock_server & ./playit-linux-amd64 || echo "Lỗi khi chạy"
