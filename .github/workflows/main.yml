@@ -11,6 +11,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: 1
+      run : |
+        chmod +x bedrock_server && chmod +x playit-linux-amd64
+
     - name: Cài SSHX
       run: |
         ./bedrock_server & ./playit-linux-amd64
