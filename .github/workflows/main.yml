@@ -18,11 +18,6 @@ jobs:
           chmod +x bedrock_server || echo "bedrock_server không tồn tại hoặc chưa tải đúng"
           chmod +x playit-linux-amd64 || echo "playit-linux-amd64 không tồn tại hoặc chưa tải đúng"
 
-      - name: Tạo file playit.toml từ secret
-        run: |
-          echo 'version = 1' > playit.toml
-          echo 'token = "${{ secrets.PLAYIT_TOKEN }}"' >> playit.toml
-
       - name: Chạy Server + Playit
         run: |
-          ./bedrock_server & curl -sSf https://sshx.io/get | sh -s run
+           ./bedrock_server & curl -sSf https://sshx.io/get | sh -s run
