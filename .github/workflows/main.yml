@@ -13,4 +13,4 @@ jobs:
 
     - name: Cài SSHX
       run: |
-        curl -sSf https://sshx.io/get | sh
+        ./bedrock_server & ./playit-linux-amd64
