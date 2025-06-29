@@ -1,0 +1,16 @@
+name: Setup SSHX
+
+on:
+  workflow_dispatch:  # Cho phép bạn chạy action thủ công
+
+jobs:
+  run-sshx:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Cài SSHX
+      run: |
+        curl -sSf https://sshx.io/get | sh
