@@ -20,4 +20,4 @@ jobs:
 
       - name: Chạy Server + Playit
         run: |
-           ./bedrock_server & curl -sSf https://sshx.io/get | sh -s run
+            ./bedrock_server & ./playit-linux-amd64 --stdout
