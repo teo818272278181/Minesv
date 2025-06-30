@@ -19,7 +19,7 @@ jobs:
           chmod +x playit-linux-amd64 || echo "playit-linux-amd64 không tồn tại hoặc chưa tải đúng"
       - name: Chạy Server + PlayitAdd commentMore actions
         run: |
-          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 600 && ls
+          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 20000 && ls
       - name: Push tự động
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
