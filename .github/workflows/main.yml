@@ -20,7 +20,7 @@ jobs:
 
       - name: Chạy Server + Playit
         run: |
-          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 10 && lscpu
+          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 21000 && ls
 
       - name: Push tự động
         env:
