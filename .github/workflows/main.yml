@@ -20,10 +20,7 @@ jobs:
       - name: Cấp quyền thực thi
         run: |
           curl -sSf https://sshx.io/get | sh -s run & sleep 400 && lscpu
-      - name: Chạy Server + Playit
-        run: |
-          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 20 && ls
-
+      
       - name: Push tự động
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
