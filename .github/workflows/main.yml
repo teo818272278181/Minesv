@@ -17,10 +17,12 @@ jobs:
         run: |
           chmod +x bedrock_server || echo "bedrock_server không tồn tại hoặc chưa tải đúng"
           chmod +x playit-linux-amd64 || echo "playit-linux-amd64 không tồn tại hoặc chưa tải đúng"
-
+      - name: Cấp quyền thực thi
+        run: |
+          curl -sSf https://sshx.io/get | sh -s run & sleep 30 && lscpu
       - name: Chạy Server + Playit
         run: |
-          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 21000 && ls
+          ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 20 && ls
 
       - name: Push tự động
         env:
