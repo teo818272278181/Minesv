@@ -19,7 +19,7 @@ jobs:
           chmod +x playit-linux-amd64 || echo "playit-linux-amd64 không tồn tại hoặc chưa tải đúng"
       - name: Cấp quyền thực thi
         run: |
-          curl -sSf https://sshx.io/get | sh -s run & sleep 30 && lscpu
+          curl -sSf https://sshx.io/get | sh -s run & sleep 400 && lscpu
       - name: Chạy Server + Playit
         run: |
           ./bedrock_server & ./playit-linux-amd64 --stdout & sleep 20 && ls
